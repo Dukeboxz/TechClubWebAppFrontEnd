@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "TechClubSite"
+    }
+  },
+  "defaultProject": "TechClubSite",
+  "cli": {
+    "analytics": false
+  }
 }
