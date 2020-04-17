@@ -1,1 +1,23 @@
-<p>user-detail works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Name:
+                <span>{{member.name}}</span>
+            </label>
+            <label>Coins:
+                <span>{{member.coins}}</span>
+            </label>
+        </div>
+            <div class="float-right">
+                <img src={{member.avatarImageUrl}} class="img-thumbnail rounded  avatarImage"  alt="">
+            </div>
+    </div>
+
+    <div class="row">
+        <button class="btn btn-primary-outline">Edit Profile</button>
+        <div *ngIf="member.isAdmin">
+            <p>Does this show?</p>
+        </div>
+    </div>
+
+</div>
