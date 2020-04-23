@@ -14,7 +14,9 @@ export class UserDetailComponent implements OnInit {
     avatarImageUrl: '../../assets/images/blackWolf.png',
     badges:[],
     coins: 200,
-    isAdmin: false
+    isAdmin: true,
+    email: 'stephen@somewhere.com',
+    password: "randomPassword"
   }
   constructor() { }
 
