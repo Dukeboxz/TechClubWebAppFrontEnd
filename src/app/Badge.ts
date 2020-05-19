@@ -4,4 +4,5 @@ export interface Badge {
     name: string;
     badgeImageUrl: string; 
     badgeCost: number;
+    badgeDescription: string;
 }

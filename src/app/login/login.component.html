@@ -1,1 +1,24 @@
-<p>login works!</p>
+<div class="container">
+    <h1>Login To Tech Club</h1>
+    <form #loginForm="ngForm">
+        <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input type="email" class="form-control" id="loginEmail" required 
+            [(ngModel)]=model.loginEmail name="loginEmail"/>
+
+            <div [hidden]="loginEmail.valid || loginEmail.pristine"
+            class="alert alert-danger">
+            Email is required
+           </div>
+
+        </div>
+        <div class="form-control">
+            <label for="loginPassword">Password</label>
+            <input type="password" class="form-control" id="loginPassword" required
+            [(ngModel)]=model.loginPassword name="loginPassword" />
+
+        </div>
+
+        <button type="submit" class="btn btn-success">submit</button>
+    </form>
+</div>

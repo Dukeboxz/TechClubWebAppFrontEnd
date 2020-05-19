@@ -1,0 +1,30 @@
+<div class="container">
+
+    <h1>Create Badge</h1>
+    <form (ngSubmit)="onSubmit()" #createBadgeForm="ngForm">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control"
+             id="name" required
+             [(ngModel)]="badge.name">
+        </div>
+        <div class="form-group">
+            <label for="badgeDescription">Description</label>
+            <textarea name="badgeDescriptinText" id="badgeDescription" cols="30" rows="10" class="form-control"
+            [(ngModel)]="badge.badgeDescription" name="badgeDescription"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="badgeImageUrl">Badge Image</label>
+            <input type="file" name="badgeImageUrl" id="badgeImageUrl" class="form-control"
+            [(ngModel)]="badge.badgeImageUrl">
+        </div>
+        <div class="form-group">
+            <label for="badgeCost">Cost of badge</label>
+            <input type="number" name="badgeCost" id="badgeCost" class="form-control"
+            [(ngModel)]="badge.badgeCost">
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="button" class="btn btn-default" (click)="newBadge(); createBadgeForm.reset()">New Badge</button>
+    </form>
+
+</div>

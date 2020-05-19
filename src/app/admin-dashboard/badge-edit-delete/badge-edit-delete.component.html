@@ -1,9 +1,33 @@
 <div class="container">
     <form >
     <div class="row">
-       
-        <label for="badgeName">Badge Name</label>
+       <div class="form-group"></div>
+        <label for="badgeNameInput">Badge Name</label>
+        <input type="text" class="form-control" id="badgeNameInput" [(ngModel)]="badge.name" name="badgeNameInput">
+        <div>
+            <button (click)="GetBadgeByName()" type="button" class="btn">Find Badge</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+        <label for="badgeDescription"></label>
+        <textarea id="badgeDescription" cols="50" rows="4" [(ngModel)]="badge.badgeDescription"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <label for="badgeImage">Badge Image</label>
+            <input (change)="fileChange($event)" type="file" id="imageFileUpload">
+        </div>
+        <div>
+            <img src={{badge.badgeImageurl}} alt="Badge Image">
+        </div>
 
+    </div>
+
+    <div class="row">
+        <button (click)="editBadge()" class="btn btn-outline-primary">Update</button>
+        <button (click)=deleteBadge() class="btn btn-putline-primary">Delete</button>
     </div>
 
 </form>

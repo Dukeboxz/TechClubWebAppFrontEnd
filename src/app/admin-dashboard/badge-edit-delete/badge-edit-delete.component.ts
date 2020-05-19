@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {Badge} from '../../Badge'
+import {BadgeService} from '../../badge.service'
 
 @Component({
   selector: 'app-badge-edit-delete',
@@ -13,12 +14,36 @@ export class BadgeEditDeleteComponent implements OnInit {
     id: null, 
     name: '', 
     badgeImageUrl: '', 
-    badgeCost: 0
+    badgeCost: 0, 
+    badgeDescription: null
   }
 
-  constructor() { }
+  badgeImage: File; 
+
+  constructor(private badgeService:BadgeService) { }
 
   ngOnInit(): void {
+  }
+
+  fileChange(element){
+
+    this.badgeImage = element.target.files[0];
+    let returnq = this.badgeService.uploadBadgeImage(this.badgeImage, this.badge);
+  }
+
+  editBadge() {
+
+    this.badgeService.updateBadge(this.badge)
+    .subscribe((result)=>{
+      console.log(result);
+    })
+  }
+
+  deleteBadge() {
+    this.badgeService.deleteBadge(this.badge)
+    .subscribe((result)=> {
+      console.log(result)
+    })
   }
 
 }
